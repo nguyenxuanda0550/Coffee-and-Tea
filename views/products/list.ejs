@@ -1,0 +1,57 @@
+<div class="container mt-5">
+    <h1>List product</h1>
+    <a type="button" class="btn btn-info btn-lg" href="/product/add">Add New Product</a>
+
+    <table class="table table-light table-striped mt-3">
+        <tr>
+            <th>Product Name</th>
+            <th>Information</th>
+            <th>price</th>
+            <th>Quantity</th>
+            <th>Category</th>
+            <th>Image</th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </tr>
+        <%
+        products.map(pro=>{
+            %>
+            <tr>
+                <td>
+                    <%= pro.name %>
+                </td>
+                <td>
+                    <%= pro.info %>
+                </td>
+                <td>
+                    <%= pro.price %>
+                </td>
+                <td>
+                    <%= pro.quantity %>
+                </td>
+                <td>
+                    <%
+                        if(pro.category)
+                        {%>
+                        <%= pro.category.name %>
+                            <%}
+
+                    %>
+                </td>
+                <td>
+                    <img src="<%=pro.imageSrc%>" alt="" width="50px">
+                </td>
+                <td>
+                    <a href="/product/edit/<%=pro._id%>" class="btn btn-warning">Edit</a>
+                </td>
+                <td>
+                    <%- include('../part/formDelete',{url:`/product/delete/${pro._id}`})%>
+                </td>
+            </tr>
+            <%
+        })
+       
+        %>
+
+    </table>
+</div>

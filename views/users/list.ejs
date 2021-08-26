@@ -1,0 +1,39 @@
+<div class="container mt-5" style="margin-bottom: 400px;">
+    <a type="button" class="btn btn-info btn-lg" href="/user/register">Register</a>
+    <h1>List user</h1>
+    <%- include('../part/message')%>
+        <table class="table table-dark table-striped mt-3">
+            <tr>
+                <th>User Name</th>
+                <td>Email</td>
+                <td>Password</td>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+            <%
+        user.map(u=>{
+            %>
+                <tr>
+                    <td>
+                        <%= u.name %>
+                    </td>
+                    <td>
+                        <%= u.email %>
+                    </td>
+                    <td>
+                        <%= u.password %>
+                    </td>
+                    <td>
+                        <a href="" class="btn btn-warning">Edit</a>
+                    </td>
+                    <td>
+                        <%- include('../part/formDelete',{url:`/user/delete/${u._id}?_method=DELETE`})%>
+                    </td>
+                </tr>
+                <%
+        })
+       
+        %>
+
+        </table>
+</div>

@@ -1,0 +1,21 @@
+<div class="container mt-5 w-50">
+    <h1>Register User</h1>
+    <form action="/user" method="POST">
+        <div class="form-floating mb-3">
+            <input type="text" required class="form-control" name="name" id="floatingInput" placeholder="name">
+            <label for="floatingInput">User Name</label>
+        </div>
+        <div class="form-floating mb-3">
+            <input type="email" required class="form-control" name="email" id="floatingInput" placeholder="email">
+            <label for="floatingInput">Email</label>
+        </div>
+        <div class="form-floating mb-3">
+            <input type="text" required class="form-control" name="password" id="floatingInput" placeholder="password">
+            <label for="floatingInput">Password</label>
+        </div>
+        <div class="form-floating">
+            <input type="submit" class="form-control btn btn-primary update" value="Save" style="margin-bottom: 100px;">
+
+        </div>
+    </form>
+</div>

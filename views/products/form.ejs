@@ -1,0 +1,51 @@
+<div class="form-floating mb-3">
+    <input type="text" required class="form-control" name="name" id="floatingInput" placeholder="name" value="<%=product.name%>">
+    <label for="floatingInput">Product Name</label>
+</div>
+
+<div class="form-floating mb-3">
+    <input type="text" required class="form-control" name="info" id="floatingInput" placeholder="name" value="<%=product.info%>">
+    <label for="floatingInput">Information</label>
+</div>
+
+<div class="form-floating  mb-3">
+    <input type="text" required class="form-control" name="price" id="floatingInput" placeholder="name" value="<%=product.price%>">
+    <label for="floatingInput">Price</label>
+</div>
+
+<div class="form-floating  mb-3">
+    <input type="text" required class="form-control" name="quantity" id="floatingInput" placeholder="name" value="<%=product.quantity%>">
+    <label for="floatingInput">Quantity</label>
+</div>
+
+<div class="form-floating  mb-3">
+    <input type="file" class="filepond" name="image">
+    <label for="floatingInput">Image</label>
+
+</div>
+
+
+
+<div class="form-floating  mb-3">
+    <select name="category" class="form-select">
+        <%
+            category.map(cate=>{%>
+
+                <%
+                    if(cate._id==product.category){%>
+                        <option selected value="<%= cate._id%>"><%= cate.name%></option>
+                    <%}
+                    else{%> 
+                        <option value="<%= cate._id%>"><%= cate.name%></option>
+                    <%}
+                %>     
+            <%})
+        %>
+       
+    </select>
+</div>
+
+<div class="form-floating">
+    <input type="submit" class="form-control btn btn-primary mb-5 update" value="Save">
+
+</div>

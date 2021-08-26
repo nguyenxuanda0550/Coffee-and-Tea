@@ -1,0 +1,26 @@
+<div class="container mt-5 w-50">
+    <h1>Login User</h1>
+
+    <%- include('../part/message')%>
+        <form action="/user/login" method="POST">
+            <div class="form-floating mb-3">
+                <input type="email" required class="form-control" name="email" id="floatingInput" placeholder="email">
+                <label for="floatingInput">Email</label>
+            </div>
+            <div class="form-floating mb-3">
+                <input type="text" required class="form-control" name="password" id="floatingInput" placeholder="password">
+                <label for="floatingInput">Password</label>
+            </div>
+            <div class="form-floating">
+                <input type="submit" class="form-control btn btn-info update" value="Login">
+
+            </div>
+        </form>
+        <div style="margin-bottom: 200px;">
+            <a href="/user/github" class="btn btn-info mt-2">Login with Github</a>
+            <a href="/user/google" class="btn btn-info mt-2">Login with Google</a>
+        </div>
+
+
+
+</div>

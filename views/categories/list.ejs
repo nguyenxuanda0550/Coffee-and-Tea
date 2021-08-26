@@ -1,0 +1,31 @@
+<div class="container mt-5">
+    <h1>List categories</h1>
+    <a type="button" class="btn btn-info btn-lg" href="/category/add">Add New Category</a>
+
+    <table class="table table-light table-striped mt-3">
+        <tr>
+            <th>Category Name</th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </tr>
+        <%
+        categories.map(cate=>{
+            %>
+            <tr>
+                <td>
+                    <%= cate.name %>
+                </td>
+                <td>
+                    <a href="/category/edit/<%=cate._id%>" class="btn btn-warning">Edit</a>
+                </td>
+                <td>
+                    <%- include('../part/formDelete',{url:`/category/delete/${cate._id}`})%>
+                </td>
+            </tr>
+            <%
+        })
+       
+        %>
+
+    </table>
+</div>

@@ -1,0 +1,51 @@
+<div class="container mt-5">
+    <h1>List carts</h1>
+    <a type="button" class="btn btn-info btn-lg" href="/">Add New Cart</a>
+
+    <table class="table table-light table-striped mt-3">
+        <tr>
+            <th>Cart Name</th>
+            <th>Price</th>
+            <th>Image</th>
+            <th>Quantity</th>
+            <th>Delete</th>
+        </tr>
+        <%
+        cart.map(x=>{
+            %>
+            <tr id="tr_cart_<%= x.id%>">
+                <td>
+                    <%= x.item.name %>
+                </td>
+                <td>
+                    <%= x.item.price%>
+                </td>
+                <td>
+                    <img src=" <%= x.imageSrc %>" alt="" width="50px" height="50px">
+                </td>
+                <td>
+                    <div class="qty">
+                        <form action="/cart/reduce/<%=x.id%>?_method=PUT" method="POST" data-id="<%=x.id%>" class="reduceFormCart">
+                            <input type="submit" value="-" class="btn btn-danger">
+                        </form>
+                        <span class="count" id="qty<%=x.id%>" style="width:20px;text-align: center;"><span id="qty2<%=x.id%>" style="font-size: 20px;"><%=x.qty%></span></span>
+                        <form action="/cart/increase/<%=x.id%>?_method=PUT" method="POST" data-id="<%=x.id%>" class="increaseFormCart">
+                            <input type="submit" value="+" class="btn btn-danger">
+                        </form>
+                    </div>
+                </td>
+
+                <td>
+                    <form action="/cart/delete/<%=x.id%>?_method=DELETE" method="POST" data-id="<%=x.id%>" class="deleteFormCart">
+                        <input type="submit" value="Delete" class="btn btn-danger ">
+                    </form>
+                </td>
+            </tr>
+            <%
+        })
+        %>
+    </table>
+    <p><strong style="font-size: 25px;">Tổng tiền:   </strong><span id="total1"><span id="total2"><input type="text" value="<%=total%>" style="font-style:oblique;font-size: 20px;"></span></span>
+    </p>
+    <a href="/cart/checkout" class="btn btn-info" style="margin-bottom: 150px;">Checkout</a>
+</div>

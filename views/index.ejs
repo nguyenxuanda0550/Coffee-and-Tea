@@ -1,0 +1,32 @@
+<div class="container mb-5">
+    <div class="row">
+        <%
+        product.map(pro=>{%>
+            <div class="col-xs-6 col-sm-3 col-md-3 col-lg-3">
+                <div class="product-card">
+                    <div class="card mt-3 ">
+                        <div class="card-body">
+                            <img src="<%=pro.imageSrc%>" class="card-img-top" alt="...">
+                        </div>
+
+                        <div class="card-body">
+                            <h5 class="card-title">
+                                <%=pro.name%>
+                            </h5>
+                            <p class="card-text">
+                                <%=pro.price%>đ
+                            </p>
+                            <p class="card-text">
+                                <%=pro.info%>
+                            </p>
+                            <a href="/cart/add/<%= pro._id%>" class="btn btn-primary addCart">Add to cart</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <%})
+    %>
+    </div>
+
+</div>

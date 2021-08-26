@@ -1,0 +1,79 @@
+1. npm init -y
+2.npm install --save-dev nodemon
+3.npm install express-ejs-layouts
+4. npm install express ejs mongoose --save
+
+
+1. npm init -y
+2. npm start => chay chuong trinh sau moi lan thay doi
+2. npm install --save-dev nodemon
+3. nodemon server =>chay chuong trinh 1 lan duy nhat
+
+4."scripts": {
+        "start": "node server",
+        "startDev": "nodemon server"
+    },
+
+
+5.    **Nhận xét
+    - npm run start=node server => chay moi lan
+    - npm run startDev=nodemon server => chay duy nhat 1 lan
+
+6.   *Để stop chương trình ta nhấn Ctr + c
+
+7.  npm install express ejs
+
+--git 
+7. git init
+8. git add .
+9. git checkout -b main
+10. git commit -m "Initial Setup"
+11. git remote add origin git@github.com:ngoctan1234/nodejs1.git
+12. git push origin main
+
+-- heroku
+13. npm i -g heroku
+14. heroku login
+15.heroku git:remote -a nodejs-project-1
+16.git push heroku main
+
+--commit lan 2
+1. git add .
+2. git commit -m "up lan 2"
+3.git remote -v
+4. git push origin1 main
+5. git push heroku main
+6. thay doi mongodb atlas
+  add ip adress moi: 0.0.0.0/0
+7. trong heroku dashboard: more> restart all dynos
+
+****.Nhận xét: hiện nay các coder yêu cầu viết api chuẩn rest, nên trong router, ứng với mỗi tác vụ, ta cần viết đúng put,delete,get, post tương ứng
+
+cụ thể:
++ lay du lieu: get
++ update dữ liệu: put
++delete dữ liệu : delete
++ thêm dữ liệu : post
+
+trong html5 k hỗ trợ delete và put, nên ta cần ghi đè phương thức
+
+thẻ a k hỗ trỡ ghi đè
+
+cú pháp ghi đè url ?_method=DELETE
+
+
+Từ Khóa: (method override npm)
+***.dotenv-npm
+
+nhớ require('dotenv').config()
+
+Mục đích tạo các biến môi trường trong file .env: bảo mật dữ liệu và dễ thay đổi khi up lên host( vd thay đổi database, thay đổi port...)
+
+
+app.listen(process.env.PORT||3000) => nghĩa là khi k có biến PORT trong .env, nó mặc định 3000
+
+
+
+
+
+

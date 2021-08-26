@@ -1,0 +1,30 @@
+<div class="container">
+    <a href="/"></a>
+    <div class="form-group">
+        <form action="/cart/order" method="POST">
+
+            <h4>Address:</h4>
+            <input required type="text" class="form-control" placeholder="Enter">
+            <%
+            
+            product.forEach(product =>{%>
+                <div style="font-size: 20px;" class="mt-2 mb-2">
+                    <%= product.item.name%>:(
+                        <%= product.qty%>)
+                            <span>--</span>
+                            <%= product.item.price *product.qty%>
+                </div>
+
+                <%})
+            %>
+
+                    <div class="total">
+                        <h3>Tổng tiền:
+                            <%=total%>
+                        </h3>
+                        <input type="submit" class="btn btn-primary" value="Oder">
+                    </div>
+        </form>
+        <a href="/cart/pay" class="btn btn-primary mt-2" style="margin-bottom: 200px;">Pay</a>
+    </div>
+</div>
